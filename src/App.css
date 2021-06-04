@@ -35,25 +35,22 @@ body{
   font-size: 25px;
   margin-bottom: 30px;
   font-style: italic;
+  margin-bottom: 55px;
 }
 
-.temperature{
+
+p{
+  text-align: center;
+  display: inline;
+  font-size: 50px;
   color: rgba(255, 255, 255,0.7);
-  text-shadow:2px 3px rgb(158, 141, 142);
-  font-size: 29px;
-  margin: 30px 130px;
-  padding: 20px 20px;
+  text-shadow: 3px 2px rgba(0, 0, 0, 0.3);
+
   background: rgba(252, 250, 250, 0.2);
   box-shadow: 2px 3px rgba(56, 45, 45, 0.2);
   border-radius: 8px;
-  text-shadow: 3px 2px rgba(0, 0, 0, 0.3);
-  font-size: 50px;
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  font-weight: 900;
+
+  padding: 20px;
 }
 
 .climate{
@@ -62,6 +59,7 @@ body{
   font-size: 40px;
   margin-bottom: 30px;
   font-weight: bold;
+  margin-top: 45px;
 }
 
 button{

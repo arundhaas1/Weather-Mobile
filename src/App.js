@@ -21,14 +21,21 @@ function App() {
     return(`${day},${date} ${month} ${year}`)
   }
 
-  const[input,setInput]=useState("")
+  const[input,setInput]=useState("texas")
   const[weather,setWeather]=useState({})
 
-  const todayClimate=(event)=>{
-        fetch(`${api.base}weather?q=${setInput}&units=metric&appid=${api.key}`)
+  const todayClimate=async ()=>{
+    //console.log(input)
+        await fetch(`${api.base}weather?q=${input}&units=metric&appid=${api.key}`)
         .then(res=>res.json())
-        .then(data=>setWeather(data)
-        )
+        .then(data=>{
+          setWeather(data)
+          console.log(weather)
+      })
+        
+  }
+  const onTextChange=(event)=>{
+      setInput(event.target.value)
   }
 
     return (
@@ -37,9 +44,11 @@ function App() {
               <input 
                  type="text"
                  placeholder="Search..."
-                 className="Search">
-              </input>
-              <button>
+                 className="Search"
+                onChange={onTextChange}
+                />
+              
+              <button onClick={todayClimate}>
                 Find
               </button>
             </div>  
@@ -53,7 +62,7 @@ function App() {
             </div>
 
             <div className="temperature tc">
-              15&#8451;
+              <p>15&#8451;</p>
             </div>
 
             <div className="climate tc">
