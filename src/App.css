@@ -64,3 +64,16 @@ body{
   font-weight: bold;
 }
 
+button{
+  background-color: rgba(255, 255, 255,0.8);
+  outline: none;
+  border: solid 3px transparent;
+  border-radius: 10px;
+  font-weight: 900;
+  opacity: 0.9;
+  box-shadow: 2px 3px rgb(158, 141, 142) ;
+  color: rgba(165, 165, 165,0.8);
+  padding: 5px 10px;
+}
+
+

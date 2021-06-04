@@ -25,12 +25,10 @@ function App() {
   const[weather,setWeather]=useState({})
 
   const todayClimate=(event)=>{
-    if (event.key==="Enter") {
         fetch(`${api.base}weather?q=${setInput}&units=metric&appid=${api.key}`)
         .then(res=>res.json())
         .then(data=>setWeather(data)
         )
-      }
   }
 
     return (
@@ -41,6 +39,9 @@ function App() {
                  placeholder="Search..."
                  className="Search">
               </input>
+              <button>
+                Find
+              </button>
             </div>  
 
             <div className="place tc">
