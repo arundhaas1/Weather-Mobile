@@ -1,38 +1,66 @@
-.App {
+body{
+  background-image: url('./Assets/cold-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'montseratt',sans-serif;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)) , url(./Assets/cold-bg.jpg);
+} 
+
+
+.Search{
+ padding: 15px 30px;
+ border: solid 2px white;
+ margin: 15px 20px;
+ border-radius: 15px;
+ box-shadow:3px 4px rgb(204, 199, 199);
+ outline: none;
+ opacity: 0.8;
+ width: 100%;
+}
+
+.place{
+  font-size: 42px;
+  color: rgba(255, 255, 255,0.9);
+  text-shadow:2px 3px rgb(158, 141, 141);
+  margin-top: 30px;
+  font-weight: bolder;
+
+}
+
+.date{
+  color: rgba(255, 255, 255,0.7);
+  text-shadow:2px 3px rgb(158, 141, 142);
+  font-size: 25px;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.temperature{
+  color: rgba(255, 255, 255,0.7);
+  text-shadow:2px 3px rgb(158, 141, 142);
+  font-size: 29px;
+  margin: 30px 130px;
+  padding: 20px 20px;
+  background: rgba(252, 250, 250, 0.2);
+  box-shadow: 2px 3px rgba(56, 45, 45, 0.2);
+  border-radius: 8px;
+  text-shadow: 3px 2px rgba(0, 0, 0, 0.3);
+  font-size: 50px;
+  position: relative;
+  display: inline-block;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: 900;
 }
 
-.App-link {
-  color: #61dafb;
+.climate{
+  color: rgba(255, 255, 255,0.7);
+  text-shadow:2px 3px rgb(158, 141, 142);
+  font-size: 40px;
+  margin-bottom: 30px;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
