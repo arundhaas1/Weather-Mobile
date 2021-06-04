@@ -13,40 +13,48 @@ function App() {
     let months =["January","Febraury","March","April","May","June","July","August","September","October","November","December"]
     let days=["Sunday","Monday","Tuesday","Wednesday","Thurshday","Friday","Saturday"]
 
-    let day=days[d.getDay()]
-    let month=months[d.getMonth()]
-    let date=d.getDate()
-    let year=d.getFullYear()
+    var day=days[d.getDay()]
+    var month=months[d.getMonth()]
+    var date=d.getDate()
+    var year=d.getFullYear()
 
-    return(`${day} ${date} ${month} ${year}`)
+    return(`${day},${date} ${month} ${year}`)
   }
 
-  const[query,setQuery]=useState("")
-  const[Weather,setWeather]=useState("")
+  const[input,setInput]=useState("")
+  const[weather,setWeather]=useState({})
 
-  const weathering=(event)=>{
+  const todayClimate=(event)=>{
     if (event.key==="Enter") {
-        fetch(`${api.base}weather?q=${query}&appid=${api.key}`)
+        fetch(`${api.base}weather?q=${setInput}&units=metric&appid=${api.key}`)
         .then(res=>res.json())
-        .then(data=>setWeather(data))
-        
-        
-    }
+        .then(data=>setWeather(data)
+        )
+      }
   }
+
     return (
         <div className="app">
             <div className="searchBox tc ">
-              <input  onChange={e=>setQuery(e.target.value)} value={query} onKeyPress={weathering} type="text" placeholder="Search..." className="Search" />
-            </div>          
+              <input 
+                 type="text"
+                 placeholder="Search..."
+                 className="Search">
+              </input>
+            </div>  
+
             <div className="place tc">
               TamilNadu
             </div>
+
             <div className="date tc">
               {datebuilder(new Date())}
             </div>
+
             <div className="temperature tc">
               15&#8451;
             </div>
+
             <div className="climate tc">
               Cloudy
             </div>
