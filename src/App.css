@@ -1,12 +1,26 @@
-body{
-  background-image: url('./Assets/cold-bg.jpg');
+.appcold{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)) , url(./Assets/cold-bg.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: 'montseratt',sans-serif;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)) , url(./Assets/cold-bg.jpg);
+  height: 100vh;
+  width: 100%;
+
 } 
+
+.appwarm{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)) , url(./Assets/warm-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'montseratt',sans-serif;
+  height: 100vh;
+ 
+} 
+
 
 
 .Search{
@@ -39,7 +53,7 @@ body{
 }
 
 
-p{
+p.tempr{
   text-align: center;
   display: inline;
   font-size: 50px;

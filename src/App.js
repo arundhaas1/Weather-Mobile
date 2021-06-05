@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import './App.css';
 import 'tachyons'
 
@@ -8,6 +8,12 @@ function App() {
       key:"4dd4958a97c8f01faf5b64a07c1ee485",
       base:"https://api.openweathermap.org/data/2.5/"
     }
+
+    useEffect(()=>{
+      console.log('before')
+      todayClimate('Nagercoil')
+      console.log('useeffect')
+    },[]);
 
   const datebuilder=(d)=>{
     let months =["January","Febraury","March","April","May","June","July","August","September","October","November","December"]
@@ -21,25 +27,28 @@ function App() {
     return(`${day},${date} ${month} ${year}`)
   }
 
-  const[input,setInput]=useState("texas")
+  const[input,setInput]=useState("")
   const[weather,setWeather]=useState({})
 
-  const todayClimate=async ()=>{
-    //console.log(input)
-        await fetch(`${api.base}weather?q=${input}&units=metric&appid=${api.key}`)
+  const todayClimate=(place)=>{
+        fetch(`${api.base}weather?q=${place}&units=metric&appid=${api.key}`)
         .then(res=>res.json())
         .then(data=>{
           setWeather(data)
-          console.log(weather)
-      })
-        
+          console.log(data)
+          // console.log(data.main)
+          console.log(data.main.temp)
+        })
+      
   }
   const onTextChange=(event)=>{
       setInput(event.target.value)
   }
 
     return (
-        <div className="app">
+      <div>
+        { weather.main !== undefined ?
+        <div className={weather.main.temp < 20 ? "appcold":"appwarm"}>
             <div className="searchBox tc ">
               <input 
                  type="text"
@@ -48,13 +57,13 @@ function App() {
                 onChange={onTextChange}
                 />
               
-              <button onClick={todayClimate}>
+              <button onClick={()=>todayClimate(input)}>
                 Find
               </button>
             </div>  
 
             <div className="place tc">
-              TamilNadu
+              <p >{weather.name},{weather.sys.country}</p>
             </div>
 
             <div className="date tc">
@@ -62,13 +71,19 @@ function App() {
             </div>
 
             <div className="temperature tc">
-              <p>15&#8451;</p>
+              <p className="tempr">{
+               weather.main.temp 
+              } &deg;C</p>
             </div>
 
             <div className="climate tc">
-              Cloudy
+              <p>{
+               (weather.main.temp < 20 ?"Cloudy":"Sunny")
+                }</p>
             </div>
-        </div>
+        </div> : null}
+
+      </div>
       );
 }
 
