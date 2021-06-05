@@ -10,10 +10,9 @@ function App() {
     }
 
     useEffect(()=>{
-      console.log('before')
       todayClimate('Nagercoil')
       console.log('useeffect')
-    },[]);
+    });
 
   const datebuilder=(d)=>{
     let months =["January","Febraury","March","April","May","June","July","August","September","October","November","December"]
@@ -35,9 +34,6 @@ function App() {
         .then(res=>res.json())
         .then(data=>{
           setWeather(data)
-          console.log(data)
-          // console.log(data.main)
-          console.log(data.main.temp)
         })
       
   }
@@ -81,7 +77,11 @@ function App() {
                (weather.main.temp < 20 ?"Cloudy":"Sunny")
                 }</p>
             </div>
-        </div> : null}
+        </div> : 
+        <div className="appwarm">
+          <p className=" tc f2 ">city not found</p>
+        </div> 
+        }
 
       </div>
       );
