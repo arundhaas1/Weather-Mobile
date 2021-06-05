@@ -14,12 +14,12 @@ body{
 .Search{
  padding: 15px 30px;
  border: solid 2px white;
- margin: 15px 20px;
- border-radius: 15px;
+ margin: 15px 0px;
  box-shadow:3px 4px rgb(204, 199, 199);
  outline: none;
  opacity: 0.8;
  width: 100%;
+
 }
 
 .place{
