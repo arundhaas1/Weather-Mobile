@@ -61,8 +61,8 @@ function App() {
               <p >{weather.name},{weather.sys.country}</p>
             </div>
 
-            <div className="date tc">
-              {datebuilder(new Date())}
+            <div className=" tc">
+              <p className="date">{datebuilder(new Date())}</p>
             </div>
 
             <div className="temperature tc">
