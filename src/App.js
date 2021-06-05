@@ -12,7 +12,7 @@ function App() {
     useEffect(()=>{
       todayClimate('Nagercoil')
       console.log('useeffect')
-    });
+    },[]);
 
   const datebuilder=(d)=>{
     let months =["January","Febraury","March","April","May","June","July","August","September","October","November","December"]
