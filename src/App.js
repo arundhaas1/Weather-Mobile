@@ -70,16 +70,21 @@ function App() {
                weather.main.temp 
               } &deg;C</p>
             </div>
-
+          
             <div className="climate tc">
               <p>{
                (weather.main.temp < 20 ?"Cloudy":"Sunny")
-                }</p>
+               }</p>
             </div>
+              
+            <div className="footer">
+              <p>© 2021 - Developed by Arun Dhas</p>
+            </div>
+
         </div> : 
-        <div>
-          <p className=" tc f2 ">city not found</p>
-        </div> 
+            <div>
+              <p className=" tc f2 ">city not found</p>
+            </div> 
         }
 
       </div>

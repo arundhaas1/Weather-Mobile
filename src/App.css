@@ -1,4 +1,4 @@
-body{
+.appcold{
   background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)) , url(./Assets/cold-bg.jpg);
   background-position: center;
   background-size: cover;
@@ -6,8 +6,21 @@ body{
   background-attachment: fixed;
   font-family: 'montseratt',sans-serif;
   transition: 0.4s ease-out;
+  height: 100vh;
 
 } 
+
+.appwarm{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)) , url(./Assets/warm-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'montseratt',sans-serif;
+  transition: 0.4s ease-out;
+  height: 100vh;
+} 
+
 
 /* use classs name appwarm and appcold instead of body to change the bg based on the weather */
 
@@ -76,4 +89,13 @@ button{
   padding: 5px 10px;
 }
 
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(10, 10, 10,0.8);
+  color: rgb(202, 202, 202);
+  text-align: center;
+}
 
