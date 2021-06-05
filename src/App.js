@@ -41,7 +41,7 @@ function App() {
   }
 
     return (
-      <div>
+      <div className={"pl4"}>
         { weather.main !== undefined ?
         <div className={weather.main.temp < 20 ? "appcold":"appwarm"}>
             <div className="searchBox tc ">
