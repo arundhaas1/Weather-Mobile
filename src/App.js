@@ -11,7 +11,6 @@ function App() {
 
     useEffect(()=>{
       todayClimate('Nagercoil')
-      console.log('useeffect')
     },[]);
 
   const datebuilder=(d)=>{
@@ -78,7 +77,7 @@ function App() {
                 }</p>
             </div>
         </div> : 
-        <div className="appwarm">
+        <div>
           <p className=" tc f2 ">city not found</p>
         </div> 
         }

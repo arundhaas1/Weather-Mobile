@@ -1,28 +1,15 @@
-.appcold{
+body{
   background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)) , url(./Assets/cold-bg.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: 'montseratt',sans-serif;
-  height: 100vh;
-  /* width: 100%; */
   transition: 0.4s ease-out;
 
 } 
 
-.appwarm{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.5)) , url(./Assets/warm-bg.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  font-family: 'montseratt',sans-serif;
-  height: 100vh;
-  transition: 0.4 ease-out;
- 
-} 
-
+/* use classs name appwarm and appcold instead of body to change the bg based on the weather */
 
 .Search{
  padding: 15px 30px;
