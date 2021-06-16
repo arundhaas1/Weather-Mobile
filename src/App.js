@@ -34,9 +34,12 @@ function App() {
         .then(data=>{
           setWeather(data)
         })
+      setInput("")
+
       
   }
   const onTextChange=(event)=>{
+    event.preventDefault()
       setInput(event.target.value)
   }
 
@@ -45,14 +48,15 @@ function App() {
         { weather.main !== undefined ?
         <div className={weather.main.temp < 20 ? "appcold":"appwarm"}>
             <div className="searchBox tc ">
-              <input 
+             <input 
+              value={input}
                  type="text"
                  placeholder="Search..."
                  className="Search"
                 onChange={onTextChange}
                 />
               
-              <button onClick={()=>todayClimate(input)}>
+              <button  onClick={()=>todayClimate(input)}>
                 Find
               </button>
             </div>  
